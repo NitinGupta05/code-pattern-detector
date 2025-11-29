@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Pattern Detector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+  <div class="app">
+
+    <header class="app-header">
+      <div>
+        <h1>Code Pattern Detector</h1>
+        <p class="subtitle">
+          Paste C / C++ / Java-like code to detect loops, recursion and approximate time complexity.
+        </p>
+      </div>
+      <button id="themeToggle" type="button" class="pill-btn pill-btn-outline">
+        🌙 Dark
+      </button>
+    </header>
+
+    <section class="card card-input">
+      <div class="card-header-row">
+        <div class="field field-inline">
+          <label for="language">Language style</label>
+          <select id="language">
+            <option value="c">C / C++</option>
+            <option value="java">Java</option>
+            <option value="pseudo">Pseudo code</option>
+          </select>
+          <p class="small-text" id="detectedLangLine">
+            Detected: <span id="detectedLang">–</span>
+          </p>
+        </div>
+        <div class="chips">
+          <span class="chip">Loops</span>
+          <span class="chip chip-purple">Nested Depth</span>
+          <span class="chip chip-pink">Recursion</span>
+          <span class="chip chip-green">Big-O</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="code">Your code</label>
+        <div class="editor-shell">
+          <div class="editor-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="file-name">main.c</span>
+          </div>
+          <textarea
+            id="code"
+            class="code-editor"
+            spellcheck="false"
+            rows="14"
+            placeholder="Paste your function or main code here..."
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="sampleBtn" type="button" class="pill-btn pill-btn-ghost">
+          Load Sample
+        </button>
+        <button id="analyzeBtn" type="button" class="pill-btn pill-btn-primary">
+          🔍 Analyze Code
+        </button>
+      </div>
+
+      <p class="hint-text">
+        Tip: Try nested loops + recursion to see how the complexity bar reacts.
+      </p>
+    </section>
+
+    <!-- Hidden at start, shown after Analyze -->
+    <section class="card card-results hidden" id="resultsCard">
+      <div class="complexity-row">
+        <div>
+          <h2>Analysis Summary</h2>
+          <p class="summary-subtitle">Heuristic-only: useful for learning and intuition.</p>
+        </div>
+        <div class="complexity-block">
+          <span class="complexity-label">Estimated Complexity</span>
+          <div class="complexity-badge-wrapper">
+            <span id="bigO" class="badge badge-main">–</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="complexity-bar">
+        <div id="complexityFill" class="complexity-fill"></div>
+      </div>
+
+      <div class="grid">
+        <div class="stat-box">
+          <h3>Loop Patterns</h3>
+          <ul class="stats-list">
+            <li><span>for loops</span><strong id="forCount">0</strong></li>
+            <li><span>while loops</span><strong id="whileCount">0</strong></li>
+            <li><span>do-while loops</span><strong id="doWhileCount">0</strong></li>
+            <li><span>Approx. nesting depth</span><strong id="nestDepth">0</strong></li>
+          </ul>
+        </div>
+
+        <div class="stat-box">
+          <h3>Recursion</h3>
+          <p id="recursionStatus" class="badge badge-neutral">Not analyzed yet</p>
+          <p id="recursionDetails" class="small-text"></p>
+        </div>
+
+        <div class="stat-box">
+          <h3>Details</h3>
+          <p id="bigODetails" class="small-text">
+            Run analysis to view how loops and recursion influence the runtime.
+          </p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-header">
+          <h3>Explanation</h3>
+          <button id="copyExplanationBtn" type="button" class="pill-btn pill-btn-ghost pill-btn-small">
+            📋 Copy
+          </button>
+        </div>
+        <p id="explanation">
+          Paste some code and click “Analyze Code” to see a natural language explanation of the
+          detected patterns and approximate time complexity.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
