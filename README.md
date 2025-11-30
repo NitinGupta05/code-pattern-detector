@@ -6,7 +6,7 @@ It analyzes source code pasted by the user and identifies common programming pat
 All analysis runs completely client-side.
 
 🚀 Live Demo:
-👉 https://github.com/nitingupta05.io/code-pattern-detector/
+👉 https://nitingupta05.github.io/code-pattern-detector/
 
 Features
 
