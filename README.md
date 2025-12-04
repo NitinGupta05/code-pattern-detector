@@ -1,12 +1,11 @@
-code-pattern-detector 🧠
+code-pattern-detector 
 
 An intelligent code analysis and pattern detection tool built using HTML, CSS, and JavaScript.
 It analyzes source code pasted by the user and identifies common programming patterns such as loops, recursion, and potential infinite loops, while also estimating time complexity and detecting the programming language.
 
 All analysis runs completely client-side.
 
-🚀 Live Demo:
-👉 https://nitingupta05.github.io/code-pattern-detector/
+Live Demo: https://nitingupta05.github.io/code-pattern-detector/
 
 Features
 
@@ -29,7 +28,7 @@ Code safety hints:
 - Copy result as text button (useful for notes or teaching)
 - Clean dark / light theme
 
-🧰 Tech Stack
+Tech Stack
 
 - HTML5 – structure
 - CSS3 – styling, animations, dark/light theme
@@ -37,12 +36,12 @@ Code safety hints:
 
 No frameworks or external libraries.
 
-📁 Folder Structure
+Folder Structure
 code-pattern-detector/
 ├── index.html        # Main analyzer UI
 ├── style.css         # Styling & themes
 └── script.js         # Pattern detection logic
 
-👤 Author
+Author
 - Nitin Gupta
 - GitHub: https://github.com/NitinGupta05
